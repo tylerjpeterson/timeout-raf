@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>timeoutRaf - Mocha Tests</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../../node_modules/mocha/mocha.css">
+</head>
+<body>
+	<div class="mocha" id="mocha"></div>
+	<script src="../../node_modules/mocha/mocha.js"></script>
+	<script src="../../node_modules/chai/chai.js"></script>
+	<script src="../../tmp/timeout-raf.debug.js"></script>
+	<script>
+		var assert = chai.assert;
+		var expect = chai.expect;
+		var should = chai.should;
+		mocha.setup('bdd');
+	</script>
+	<script src="test.js"></script>
+	<script>mocha.run();</script>
+</body>
+</html>

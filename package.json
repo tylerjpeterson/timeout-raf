@@ -1,0 +1,43 @@
+{
+  "name": "timeout-raf",
+  "description": "Bare-bones animation-friendly cancelable timeouts via requestAnimationFrame",
+  "author": "Tyler Peterson <tylerjpeterson@gmail.com>",
+  "version": "1.0.0",
+  "main": "./index.js",
+  "scripts": {
+    "build": "mkdir -p tmp/ && browserify -r ./index.js --standalone timeoutRaf > tmp/timeout-raf.debug.js",
+    "test": "npm run build && open test/spec/index.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "latest",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/tylerjpeterson/timeout-raf/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tylerjpeterson/timeout-raf"
+  },
+  "homepage": "https://github.com/tylerjpeterson/timeout-raf",
+  "contributors": [
+    ""
+  ],
+  "xo": {
+    "globals": [
+      "requestAnimationFrame",
+      "cancelAnimationFrame",
+      "document",
+      "window",
+      "require",
+      "module"
+    ]
+  },
+  "keywords": [],
+  "engines": {
+    "node": ">=0.10.3"
+  },
+  "license": "MIT"
+}
