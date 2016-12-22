@@ -34,13 +34,13 @@ timeout(function () {
 ```
 
 
-### Passing context
+### Passing context as a parameter
 You can pass context via an optional third parameter, allowing you to define the context of the callback.
 
 ```js
 var awesomeObject = {awesome: 'clearly'};
 
-// logs `obviously` after (about) 1 second
+// logs `clearly` after (about) 1 second
 timeout(function () {
   console.log(this.awesome);
 }, 1000, awesomeObject);
@@ -53,7 +53,7 @@ You can also pass context per usual by binding the callback to any object.
 ```js
 var awesomeObject = {awesome: 'clearly'};
 
-// also logs `obviously` after (about) 1 second
+// also logs `clearly` after (about) 1 second
 timeout(function () {
   console.log(this.awesome);
 }.bind(awesomeObject), 1000);
