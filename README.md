@@ -38,13 +38,12 @@ timeout(function () {
 You can pass context via an optional third parameter, allowing you to define the context of the callback.
 
 ```js
-var someObject = {};
-someObject.awesome = 'obviously';
+var awesomeObject = {awesome: 'clearly'};
 
 // logs `obviously` after (about) 1 second
 timeout(function () {
   console.log(this.awesome);
-}, 1000, someObject);
+}, 1000, awesomeObject);
 ```
 
 
