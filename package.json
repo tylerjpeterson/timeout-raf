@@ -2,7 +2,7 @@
   "name": "timeout-raf",
   "description": "Bare-bones animation-friendly cancelable timeouts via requestAnimationFrame",
   "author": "Tyler Peterson <tylerjpeterson@gmail.com>",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./index.js",
   "scripts": {
     "build": "mkdir -p tmp/ && browserify -r ./index.js --standalone timeoutRaf > tmp/timeout-raf.debug.js",
