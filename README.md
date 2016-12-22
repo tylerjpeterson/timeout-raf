@@ -16,7 +16,7 @@ Run the tests to see typical results.
 Install via npm.
 
 ```sh
-$ npm i timeout-raf -save
+$ npm i timeout-raf
 ```
 
 
