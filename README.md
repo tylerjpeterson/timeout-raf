@@ -1,3 +1,5 @@
+![100% test coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
+
 # timeout-raf
 > Bare-bones animation-friendly cancelable timeouts via requestAnimationFrame
 
