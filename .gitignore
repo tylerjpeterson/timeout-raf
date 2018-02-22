@@ -11,3 +11,4 @@ tag.prop
 tmp/
 coverage/
 docs/
+package-lock.json
