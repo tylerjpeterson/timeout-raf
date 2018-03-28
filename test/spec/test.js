@@ -1,32 +1,30 @@
-/* global describe, it, assert, timeoutRaf */
 'use strict';
 
 const test = require('tape');
-const timeoutRaf = require('./../../');
+const timeoutRaf = require('./../..');
 
 /**
- * timeoutRaf mocha tests
- * @see https://mochajs.org/
+ * TimeoutRaf tape tests
+ * @see https://github.com/substack/tape
  */
-
 test('should be a function', assert => {
 	assert.equal(typeof timeoutRaf, 'function');
 	assert.end();
 });
 
 test('should fire when expected', assert => {
-	var t = Date.now();
-	var e = 0;
+	const t = Date.now();
+	const e = 0;
 
 	timeoutRaf(() => {
-		var diff = e - t < 100;
+		const diff = e - t < 100;
 		assert.equal(diff, true);
 		assert.end();
 	}, 1000);
 });
 
 test('should keep context', assert => {
-	var ctx = {
+	const ctx = {
 		testprop: 'exists'
 	};
 
@@ -37,35 +35,35 @@ test('should keep context', assert => {
 });
 
 test('should keep traditional context', assert => {
-	var ctx = {testprop: 'exists'};
+	const ctx = {testprop: 'exists'};
 
-	timeoutRaf(function()  {
+	timeoutRaf(function () {
 		assert.equal(this.testprop, 'exists');
 		assert.end();
 	}.bind(ctx), 1000);
 });
 
 test('should be killable', assert => {
-	var v = 1;
+	let v = 1;
 
-	var timeout1 = timeoutRaf(() => {
+	const timeout1 = timeoutRaf(() => {
 		v = 2;
 	}, 1000);
 
-	var timeout2 = timeoutRaf(() => {
+	timeoutRaf(() => {
 		timeout1.kill();
 	}, 500);
 
-	var timeout3 = timeoutRaf(() => {
+	timeoutRaf(() => {
 		assert.equal(v, 1);
 		assert.end();
 	}, 1500);
 });
 
 test('should fire immediately when told to', assert => {
-	var v = 1;
+	let v = 1;
 
-	var timeout1 = timeoutRaf(() => {
+	const timeout1 = timeoutRaf(() => {
 		v = 2;
 	}, 1500);
 
@@ -73,6 +71,7 @@ test('should fire immediately when told to', assert => {
 		timeout1.fire();
 		assert.equal(v, 2);
 		assert.end();
+
 		setTimeout(() => {
 			window.close();
 		}, 1000);
